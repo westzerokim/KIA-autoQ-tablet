@@ -198,7 +198,6 @@ header .line{
   left: 0%;
 }
 .reserve{
-  background-color: coral;
   z-index: 0;
 }
 .tabMenu>li.active div{
