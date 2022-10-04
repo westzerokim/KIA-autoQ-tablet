@@ -111,8 +111,7 @@ input{
   border: 1px solid #444444;
   text-align: center; 
   height: 50px;
-  line-height: 50px;
- 
+  line-height: 50px; 
 }
 .tabBG table th{
   background-color: #444444;
@@ -125,6 +124,9 @@ input{
 .tabBG table td{
   vertical-align :middle;
   font-size: 30px;
+}
+.tabBG table td>a{
+  margin: 1%
 }
 #content .nomal::-webkit-scrollbar{
   width: 10px;
