@@ -130,7 +130,7 @@ header .line{
 }
 #content .tabBG{
   width: 100%;
-  height: 70vh;
+  height: 80vh;
   overflow: auto;
 }
 .tabBG table {
@@ -203,4 +203,10 @@ header .line{
 }
 .tabMenu>li.active div{
 	z-index:99999;
+}
+.tabMenu>li.active .n_btn{
+  background: crimson;
+}
+.tabMenu>li.active .r_btn{
+  background: crimson;
 }
