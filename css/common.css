@@ -137,9 +137,9 @@ header .line{
   width: 100%;
   border: 1px solid #444444;
   border-collapse: collapse; 
-  
+  position: relative;
 }
-.tabBG th, td {
+.tabBG td {
   border: 1px solid #444444;
   text-align: center; 
   height: 50px;
@@ -153,6 +153,13 @@ header .line{
   line-height: 70px;
   height: 70px;
   font-weight: bold;
+}
+.tabBG table thead tr:first-child{
+  width: 100%;
+}
+.tabBG table thead{
+  position: fixed;
+  width: 100%;
 }
 .tabBG table td{
   vertical-align :middle;

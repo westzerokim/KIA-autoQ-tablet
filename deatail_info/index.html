@@ -33,6 +33,58 @@
           </div>
         </div>
       </header>
+      <div class="cont left text_left">
+        <strong style="margin-left:0px;">정비내용 선택</strong>
+        <div class="scrollBox01" style="margin-left:0px;">
+            <ul id="rcrListUL">
+                <c:forEach var="i" items="${leadtimelist.infolist}" varStatus="istatus">
+                <li class="box_tit">
+                    <a href="#">${i.NAME}</a>
+                    <ul>
+                    <c:forEach var="j" items="${i.LIST}" varStatus="jstatus">
+                        <li>
+                            <input id="mtn_cont${istatus.count}_${jstatus.count}" type="checkbox" name="mtn_cont" value="<c:out value='${j.CODE}'/>" data-time="<c:out value='${j.LEAD_NAME}'/>" data-idx="${istatus.index}${jstatus.index}" 
+                            <c:forEach var="k" items="${RepairList}" varStatus="kstatus">${(k.REPAIRCODE eq j.CODE)?"checked":""}</c:forEach>
+                            style="width: 0px;height: 0px;">
+                            <label for="mtn_cont${istatus.count}_${jstatus.count}">${j.NAME}</label>
+                        </li>
+                    </c:forEach>
+                    </ul>
+                </li>
+                </c:forEach>
+            </ul>
+        </div>
+      </div>
+      <div class="cont left text_left" style="width: 530px;">
+        <strong style="margin-left:0px;">정비내용 선택사항</strong>
+        <div class="scrollBox03 board_view5"style="overflow:scroll; margin-left:0px; margin-right: 0px;">
+            <table id="repair">
+                <colgroup>
+                    <col style="width:220px;">
+                    <col style="width:auto;">
+                    <col style="width:auto;">
+                </colgroup>
+                <tbody>
+                <c:forEach var="i" items="${RepairList}" varStatus="istatus">
+                    <tr>
+                        <td><c:out value="${i.REPAIRNAME}"/></td>
+                        <td>
+                            <label class="f_selectsmall">
+                                <select name="chk_repair" id="chk_repair_${istatus.count}">
+                                    <c:forEach var="j" items="${autome}" varStatus="jstatus">
+                                        <option value="${j.CODE}" <c:if test="${j.CODE == i.REPAIRMETHOD}">selected</c:if>><c:out value="${j.NAME}"/></option>
+                                    </c:forEach>
+                                </select>
+                            </label>
+                        </td>
+                        <input type='hidden' name="repair" value="<c:out value='${i.REPAIRCODE}'/>">
+                        <input type='hidden' name="repairseq" value="<c:out value='${i.REPAIR_SEQ}'/>">
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+        </div>
+      </div>
     </div>
   </body>
 </html>
