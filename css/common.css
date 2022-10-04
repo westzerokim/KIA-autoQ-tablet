@@ -109,17 +109,35 @@ input{
 }
 .tabBG th, td {
   border: 1px solid #444444;
-  padding: 10px;
+  text-align: center; 
+  height: 50px;
+  line-height: 50px;
+ 
 }
 .tabBG table th{
   background-color: #444444;
   color: #fff;
-  font-size: 40px;
+  font-size: 50px;
   text-align: center;
-  line-height: 50px;
+  line-height: 70px;
   height: 70px;
 }
 .tabBG table td{
+  vertical-align :middle;
   font-size: 30px;
-  text-align: center; 
+}
+#content .nomal::-webkit-scrollbar{
+  width: 10px;
+}
+#content .nomal::-webkit-scrollbar-thumb{
+  background-color: #959ca1;
+  border-radius: 10px;    
+}
+
+
+#content .nomal::-webkit-scrollbar-track{
+  background-color: rgba(0,0,0,0);
+}
+.tabBG table td>a{
+  margin: 5% 25%;
 }
