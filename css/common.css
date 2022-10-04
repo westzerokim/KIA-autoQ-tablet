@@ -5,7 +5,7 @@ body{
   font-family: 'Nanum Gothic', sans-serif;
   overflow: hidden; 
   height: 100vh;
-  display: flex;
+
 }
 img{
   display: block;
@@ -19,8 +19,27 @@ input{
   text-decoration: none;
   display: block;
 }
-
+.btn{
+  display: block;
+  position: relative;
+  float: left;
+  width: 200px;
+  height: 50px;
+  padding: 0;
+  margin: 10px 10px 10px 0;
+  font-weight: bold;
+  text-align: center;
+  line-height: 50px;
+  color: #FFF;
+  border-radius: 20px;
+  transition: all 0.2s ;
+  font-size: 40px;
+  background: #444444;
+}
 /* -----------------index .html--------------------*/
+#wrap{
+  display: flex;
+}
 #left{
  width: 50%;
  position: relative;
@@ -70,15 +89,17 @@ input{
   width: 100%;
   height: 100%;
 }
-.tabBG table{
+
+.tabBG table {
   width: 100%;
-  height: 80%;
-  margin: 0 2.5% 0 2.5%;
-  border-top: 2px solid #444444;
+  border: 1px solid #444444;
   border-collapse: collapse;
-  font-size: 30px;
-  text-align: center;
+}
+.tabBG th, td {
+  border: 1px solid #444444;
+  padding: 10px;
 }
 .tabBG table th{
-  font-weight: bold;
+  background-color: #444444;
+  color: #fff;
 }
