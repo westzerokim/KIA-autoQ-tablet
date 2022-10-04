@@ -140,4 +140,5 @@ input{
 }
 .tabBG table td>a{
   margin: 5% 25%;
+  display: block;
 }
