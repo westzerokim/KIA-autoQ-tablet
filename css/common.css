@@ -99,7 +99,8 @@ input{
 }
 #content .nomal{
   width: 100%;
-  overflow:auto;
+  height: fit-content;
+  overflow: auto;
 }
 .tabBG table {
   width: 100%;
@@ -115,8 +116,10 @@ input{
   color: #fff;
   font-size: 40px;
   text-align: center;
+  line-height: 50px;
+  height: 70px;
 }
 .tabBG table td{
   font-size: 30px;
-  text-align: center;
+  text-align: center; 
 }
