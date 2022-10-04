@@ -138,7 +138,3 @@ input{
 #content .nomal::-webkit-scrollbar-track{
   background-color: rgba(0,0,0,0);
 }
-.tabBG table td>a{
-  margin: 5% 25%;
-  display: block;
-}
