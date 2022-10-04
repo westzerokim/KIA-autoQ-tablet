@@ -1,3 +1,4 @@
+/* 
 $(".search>a").click(function(){  
     $("#slide_menu").addClass('on'); 
     $(".bg").addClass('on'); 
@@ -12,8 +13,6 @@ $(".btnBlueGreen").click(function(){
   var str  = "";
   str = $(".input_num").val();
   var sentence = str.length;
-
-  //this.innerHTML;
 
   var btn_num = "";
   btn_num = this.innerHTML;
@@ -69,4 +68,13 @@ function getCheckboxValue()  {
 $(".request").click(function(){  
   $("#popup_wrap").addClass('show'); 
 });
+*/
 
+
+$(function(){
+  $('.tabMenu>li>a').click(function(){
+      $(this).parent().addClass("active").siblings().removeClass("active");
+  	 return false;
+  
+    });
+  });
