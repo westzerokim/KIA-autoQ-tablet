@@ -99,7 +99,7 @@ input{
 }
 #content .nomal{
   width: 100%;
-  height: fit-content;
+  height: 100vh;
   overflow: auto;
 }
 .tabBG table {
