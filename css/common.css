@@ -153,14 +153,17 @@ header .line{
   line-height: 70px;
   height: 70px;
   font-weight: bold;
-}
-.tabBG table thead tr:first-child{
-  width: 100%;
+ 
+  right: 0%;
 }
 .tabBG table thead{
-  position: fixed;
   width: 100%;
+  height: 70px ;
 }
+.tabBG table thead tr:first-child{
+  position: fixed;
+}
+
 .tabBG table td{
   vertical-align :middle;
   font-size: 30px;
