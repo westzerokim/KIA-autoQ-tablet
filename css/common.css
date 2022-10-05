@@ -153,23 +153,24 @@ header .line{
   line-height: 70px;
   height: 70px;
   font-weight: bold;
- 
-  right: 0%;
+  z-index: 1;
 }
 .tabBG table thead{
   width: 100%;
-  height: 70px ;
-}
-.tabBG table thead tr:first-child{
-  position: fixed;
+  height: 70px;
+  position: sticky;
+  top: -1px;
 }
 
 .tabBG table td{
   vertical-align :middle;
   font-size: 30px;
+  z-index: 0;
 }
 .tabBG table td>a{
-  margin: 1%
+  margin: 1%;
+  display: block;
+  position: static;
 }
 #content .nomal::-webkit-scrollbar{
   width: 10px;
