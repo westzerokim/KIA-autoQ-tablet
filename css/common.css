@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  overflow: hidden;
 }
 body{
   color: #333;
@@ -10,14 +11,14 @@ body{
   font-weight: 400;
   font-family: 'Nanum Gothic', sans-serif; 
   height: 100vh;
-  overflow: hidden;
+  
 }
 img{
   display: block;
 }
 a{
   text-decoration: none;
-  color: #fff;
+  color: rgb(44, 42, 42);
   display: block;
 }
 input{
@@ -224,4 +225,159 @@ header .line{
 }
 .tabMenu>li.active .r_btn{
   background: #444444;
+}
+
+/*--------------------------detail_info-----------------------------------*/
+
+#car_impo{
+  border: 3px solid #444444;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 50% 50%;
+  width: 86%;
+  margin: 0 5%;
+  height: 20vh;
+  padding: 0 2%;
+}
+
+#middle{
+  display: flex;
+  margin-top: 1%;
+}
+#fix_content{
+  width:55%;
+  margin-left: 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 60% 40%;
+  height: 60vh;
+  border: 3px solid #444444;
+  border-radius: 10px;
+}
+#fix_list{
+  width: 80%;
+  height: 80%;
+  grid-column: 1/2;
+  grid-row: 1/3;
+  overflow: auto;
+  border: 2px solid #3b3c3f;
+  padding: 2%;
+  margin:13% 8% 7% 8%;
+  border-radius: 10px;
+}
+.choice_fix{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.choice_fix>input{
+  border: 1px solid #3b3c3f;
+  border-radius: 10px;
+  width: 90%;
+  height: 70%;
+  margin-top: 13%;
+  display: block;
+}
+.choice_fix>h1{
+  position: absolute;
+  top: 12%;
+  left: 5%;
+  background: #FFF;
+  font-size: 30px;
+  font-weight: bold;
+}
+.custom_fix{
+  width: 100%;
+  height: 100%;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  position: relative;
+  margin-bottom: 7%;
+}
+.custom_fix>h1{
+  position: absolute;
+  top: 0;
+  left: 5%;
+  background: #FFF;
+  font-size: 30px;
+  font-weight: bold;
+}
+.custom_fix>input{
+  border: 1px solid #3b3c3f;
+  border-radius: 10px;
+  width: 90%;
+  height: 80%;
+  margin-top: 2%;
+  display: block;
+}
+#fix_list input[id*="answer"]{
+  display: none;
+}
+#fix_list input[id*="answer"] + label{
+  display: block;
+  border-bottom: 0;
+  color: #3b3c3f;
+  font-weight: 900;
+  position: relative;
+  cursor: pointer;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+#fix_list input[id*="answer"] + label + div{
+  max-height: 0;
+  transition: .35s ;
+  overflow: hidden;
+  font-size: 20px;
+
+}
+#fix_list input[id*="answer"] + label em{
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  margin-top: -15px;
+  display: inline-block;
+  background:url(../img/under_arrow.png) 0 0 no-repeat;
+  background-size: contain;
+  transition: 0.3s;
+}
+#fix_list input[id*="answer"] + label + div p,ul{
+  display: block;
+  padding: 20px;
+  font-weight: 600; 
+  font-size: 24px; 
+}
+#fix_list ul{
+  background: linear-gradient( to bottom, #9da7afa2, #ffffff04 );
+}
+#fix_list p{
+  color: red;
+  font-weight: 900;
+}
+#fix_list input[id*="answer"]:checked + label + div{
+  max-height:350px; 
+
+}
+#fix_list input[id*="answer"]:checked + label em{
+  transform: rotate(180deg);
+}
+#fix_list::-webkit-scrollbar{
+  width: 10px;
+}
+#fix_list::-webkit-scrollbar-thumb{
+  background-color: rgb(218, 212, 212);
+  border-radius: 10px;    
+}
+
+
+#fix_list::-webkit-scrollbar-track{
+  background-color: rgba(0,0,0,0);
+}
+#final_check{
+  border: 3px solid #444444;
+  border-radius: 10px;
+  width: 30%;
+  margin: 0 5%;
 }

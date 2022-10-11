@@ -1,4 +1,4 @@
-/* 
+
 $(".search>a").click(function(){  
     $("#slide_menu").addClass('on'); 
     $(".bg").addClass('on'); 
@@ -68,7 +68,7 @@ function getCheckboxValue()  {
 $(".request").click(function(){  
   $("#popup_wrap").addClass('show'); 
 });
-*/
+
 
 
 $(function(){

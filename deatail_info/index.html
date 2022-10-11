@@ -33,57 +33,135 @@
           </div>
         </div>
       </header>
-      <div class="cont left text_left">
-        <strong style="margin-left:0px;">정비내용 선택</strong>
-        <div class="scrollBox01" style="margin-left:0px;">
-            <ul id="rcrListUL">
-                <c:forEach var="i" items="${leadtimelist.infolist}" varStatus="istatus">
-                <li class="box_tit">
-                    <a href="#">${i.NAME}</a>
-                    <ul>
-                    <c:forEach var="j" items="${i.LIST}" varStatus="jstatus">
-                        <li>
-                            <input id="mtn_cont${istatus.count}_${jstatus.count}" type="checkbox" name="mtn_cont" value="<c:out value='${j.CODE}'/>" data-time="<c:out value='${j.LEAD_NAME}'/>" data-idx="${istatus.index}${jstatus.index}" 
-                            <c:forEach var="k" items="${RepairList}" varStatus="kstatus">${(k.REPAIRCODE eq j.CODE)?"checked":""}</c:forEach>
-                            style="width: 0px;height: 0px;">
-                            <label for="mtn_cont${istatus.count}_${jstatus.count}">${j.NAME}</label>
-                        </li>
-                    </c:forEach>
-                    </ul>
-                </li>
-                </c:forEach>
-            </ul>
+      <div class="impo_title">
+        <h1>차량번호</h1>
+      </div>
+      
+      <div id="car_impo">
+       
+        <div class="car_num">
+          <div class="i_title">차번</div>
+          <div class="car_num_box">
+            <input type="text" name="" id="">
+          </div>
+        </div>
+
+        <div class="car_mile">
+          <div class="i_title">주행거리</div>
+          <div class="car_mile_box">
+            <input type="text" name="" id="">
+          </div>
+        </div>
+
+        <div class="car_usernumber">
+          <div class="i_title">연락처</div>
+          <div class="car_usernumber_box">
+            <input type="text" name="" id="">
+          </div>
+        </div>
+
+        <div class="car_type">
+          <div class="i_title">차종</div>
+          <div class="car_type_box">
+            <input type="text" name="" id="">
+          </div>
+        </div>
+        
+        <div class="car_username">
+          <div class="i_title">고객명</div>
+          <div class="car_username_box">
+            <input type="text" name="" id="">
+          </div>
+        </div>
+        
+        <div class="fix_history">
+          <a href="#">수리이력 확인하기</a>
         </div>
       </div>
-      <div class="cont left text_left" style="width: 530px;">
-        <strong style="margin-left:0px;">정비내용 선택사항</strong>
-        <div class="scrollBox03 board_view5"style="overflow:scroll; margin-left:0px; margin-right: 0px;">
-            <table id="repair">
-                <colgroup>
-                    <col style="width:220px;">
-                    <col style="width:auto;">
-                    <col style="width:auto;">
-                </colgroup>
-                <tbody>
-                <c:forEach var="i" items="${RepairList}" varStatus="istatus">
-                    <tr>
-                        <td><c:out value="${i.REPAIRNAME}"/></td>
-                        <td>
-                            <label class="f_selectsmall">
-                                <select name="chk_repair" id="chk_repair_${istatus.count}">
-                                    <c:forEach var="j" items="${autome}" varStatus="jstatus">
-                                        <option value="${j.CODE}" <c:if test="${j.CODE == i.REPAIRMETHOD}">selected</c:if>><c:out value="${j.NAME}"/></option>
-                                    </c:forEach>
-                                </select>
-                            </label>
-                        </td>
-                        <input type='hidden' name="repair" value="<c:out value='${i.REPAIRCODE}'/>">
-                        <input type='hidden' name="repairseq" value="<c:out value='${i.REPAIR_SEQ}'/>">
-                    </tr>
-                </c:forEach>
-                </tbody>
-            </table>
+      <div id="middle">
+        <div id="fix_content">
+          <div id="fix_list">
+                <div class="f_content1 accordion">
+                  <input type="checkbox" id="answer01" >
+                  <label for="answer01">소모품<em></em></label>
+                    <div>
+                      <ul class="list1">
+                        <li>엔진오일 <input name="fix" type="checkbox" value="● 엔진오일" onclick="getCheckboxValue()"></li>
+                        <li>미션오일  <input name="fix" type="checkbox" value="● 미션오일" onclick="getCheckboxValue()"></li>
+                        <li>에어컨필터  <input name="fix" type="checkbox" value="● 에어컨필터" onclick="getCheckboxValue()"></li>
+                        <li>브레이크 패드 <input name="fix" type="checkbox" value="● 브레이크 패드" onclick="getCheckboxValue()"></li>
+                        <li>부동액 <input name="fix" type="checkbox" value="● 부동액" onclick="getCheckboxValue()"></li>
+                        <li>배터리  <input name="fix" type="checkbox" value="● 배터리" onclick="getCheckboxValue()"></li>
+                        <li>와이퍼 블레이드 <input name="fix" type="checkbox" value="● 와이퍼 블레이드" onclick="getCheckboxValue()"></li>
+                      </ul>
+                    </div>  
+                </div>
+                <div class="r_content2 accordion">
+                  <input type="checkbox" id="answer02" >
+                  <label for="answer02">기본점검 및 경정비<em></em></label>
+                    <div>
+                      <ul class="list2">
+                        <li>정기점검(1~8)년차 <input name="fix" type="checkbox" value="● 정기점검(1~8)년차" onclick="getCheckboxValue()"></li>
+                        <li>경고등 점등  <input name="fix" type="checkbox" value="● 경고등 점등" onclick="getCheckboxValue()"></li>
+                        <li>냉난방장치  <input name="fix" type="checkbox" value="● 냉난방장치" onclick="getCheckboxValue()"></li>
+                        <li>램프류(전조등 교환 제외) <input name="fix" type="checkbox" value="● 램프류(전조등 교환 제외)" onclick="getCheckboxValue()"></li>
+                        <li>개폐불량(도어, 트렁크 등) <input name="fix" type="checkbox" value="● 개폐불량(도어, 트렁크 등)" onclick="getCheckboxValue()"></li>
+                        <li>스위치 작동 불량  <input name="fix" type="checkbox" value="● 스위치 작동 불량" onclick="getCheckboxValue()"></li>
+                        <li>휠/타이어 핸들 관련(열선 등) <input name="fix" type="checkbox" value="● 휠/타이어 핸들 관련(열선 등)" onclick="getCheckboxValue()"></li>
+                        <li>실내소음(도어/유리 등) <input name="fix" type="checkbox" value="● 실내소음(도어/유리 등)" onclick="getCheckboxValue()"></li>
+                        <li>시동관련 <input name="fix" type="checkbox" value="● 시동관련" onclick="getCheckboxValue()"></li>
+                        <li>리콜  <input  name="fix" type="checkbox" value="● 리콜" onclick="getCheckboxValue()"></li>
+                      </ul>
+                    </div> 
+                </div>
+                <div class="r_content3 accordion">
+                  <input type="checkbox" id="answer03" >
+                  <label for="answer03">중요정비<em></em></label>
+                  <div>
+                      <ul class="list3">
+                        <li>울컥거림(RPM불안정) <input name="fix" type="checkbox" value="● 울컥거림(RPM불안정)" onclick="getCheckboxValue()"></li>
+                        <li>주행/가속 관련  <input name="fix" type="checkbox" value="● 주행/가속 관련" onclick="getCheckboxValue()"></li>
+                        <li>변속관력(충격 등)  <input name="fix" type="checkbox" value="● 변속관력(충격 등)" onclick="getCheckboxValue()"></li>
+                        <li>차량쏠림 <input name="fix" type="checkbox" value="● 차량쏠림" onclick="getCheckboxValue()"></li>
+                        <li>차체 이음 <input name="fix" type="checkbox" value="● 차체 이음" onclick="getCheckboxValue()"></li>
+                        <li>제동 관련(abs/이음/떨림)  <input name="fix" type="checkbox" value="● 제동 관련(abs/이음/떨림)" onclick="getCheckboxValue()"></li>
+                        <li>휠/타이어 핸들 관련(열선 등) <input name="fix" type="checkbox" value="● 휠/타이어 핸들 관련(열선 등)" onclick="getCheckboxValue()"></li>
+                        <li>연비 관련 <input name="fix" type="checkbox" value="● 연비 관련" onclick="getCheckboxValue()"></li>
+                        <li>전조등 관련 <input name="fix" type="checkbox" value="● 전조등 관련" onclick="getCheckboxValue()"></li>
+                      </ul>
+                    </div>
+                </div>
+          </div>
+            <div class="choice_fix">
+              <h1>수리내역</h1>
+              <input type="text" name="" id="" value="수리내역">
+            </div>
+            <div class="custom_fix">
+              <h1>비고</h1>
+              <input type="text" value="비고란">
+            </div>
+      </div>
+        <div id="final_check">
+          <div class="total_mile">
+              <div class="f_title">
+                <h1>총 주행거리</h1>
+              </div>
+              <div class="f_content">
+                <input type="textbox">
+              </div>
+          </div>
+          <div class="need_time">
+            <div class="f_title">
+              <h1>소요예상시간</h1>
+            </div>
+            <div class="f_content">
+              <input type="textbox">
+            </div>
         </div>
+        <div class="settle_car">
+          <a href="#">정비 입고</a>
+        </div>
+        </div>  
       </div>
     </div>
   </body>
