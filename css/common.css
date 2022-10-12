@@ -240,11 +240,16 @@ header .line{
   margin: 0 5%;
   height: 20vh;
   padding: 0 2%;
+  overflow: visible;
 }
-.impo_title{
-  position: fixed;
-  top: 10%;
-  left: 8%;
+.title{
+  position: relative;
+}
+.title>h1{
+  position: absolute;
+  top:0;
+  left: 20px;
+  z-index: 99999;
   background: #fff;
   font-size: 2rem;
   font-weight: bold;
@@ -256,11 +261,13 @@ header .line{
 }
 .car_num, .car_mile, .car_usernumber{
   margin-top: 2%;
-  height: 88%;
+  height: 68%
+}
+.car_type, .car_username, .fix_history{
+  height: 100%;
 }
 #car_impo .i_title{
   height: fit-content;
-  padding-top: 2%;
   font-size: 1.2rem;
   font-weight: bold;
   color: #444444;
@@ -277,7 +284,7 @@ header .line{
   width: 50%;
 }
 #car_impo .fix_history{
-  margin-top: 3%;
+  margin-top: 1%;
 }
 #car_impo .fix_history>a{
   border: 1.5px solid #D9D9D9;
@@ -304,7 +311,7 @@ header .line{
   width:55%;
   margin-left: 5%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 60% 40%;
   grid-template-rows: 60% 40%;
   height: 60vh;
   border: 3px solid #D9D9D9;
@@ -374,7 +381,7 @@ header .line{
 #fix_list input[id*="answer"] + label{
   display: block;
   border-bottom: 0;
-  color: #8C8C8C;
+  color: #3b3c3f;
   font-weight: 900;
   position: relative;
   cursor: pointer;
@@ -436,6 +443,6 @@ header .line{
 #final_check{
   border: 3px solid #D9D9D9;
   border-radius: 10px;
-  width: 30%;
+  width: 20%;
   margin: 0 5%;
 }
