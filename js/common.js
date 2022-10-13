@@ -60,11 +60,13 @@ function getCheckboxValue()  {
 
   
 
+
   document.getElementById('result').innerText
 
     = result;
 
 }
+
 $(".request").click(function(){  
   $("#popup_wrap").addClass('show'); 
 });
